@@ -1,5 +1,8 @@
 # depslib dependency file v1.0
-1701351086 source:c:\users\gabri\onedrive\documentos\ciência da computação\3 periodo 2023.2\estrutura de dados\metodosordenação_m3\arvore\main.cpp
+1701549141 source:c:\users\gabri\onedrive\documentos\ciência da computação\3 periodo 2023.2\estrutura de dados\metodosordenação_m3\arvore\main.cpp
 	<iostream>
 	<fstream>
+	"operacoes.h"
+
+1701549596 c:\users\gabri\onedrive\documentos\ciência da computação\3 periodo 2023.2\estrutura de dados\metodosordenação_m3\arvore\operacoes.h
 

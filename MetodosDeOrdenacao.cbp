@@ -39,6 +39,9 @@
 			<Option target="&lt;{~None~}&gt;" />
 		</Unit>
 		<Unit filename="main.cpp" />
+		<Unit filename="operacoes.h">
+			<Option target="&lt;{~None~}&gt;" />
+		</Unit>
 		<Unit filename="shellsort.h">
 			<Option target="&lt;{~None~}&gt;" />
 		</Unit>

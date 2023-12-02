@@ -1,38 +1,45 @@
 #include <iostream>
 #include <fstream>
+#include "operacoes.h"
 #define TMAX 10000
 
 using namespace std;
 
 int main()
 {
-    ifstream fin;
+    bool continuar = true;
     int opcao, subopcao,qtdeDados, numComp, numMov; //ordenação decrescente de dados
-    string nomeArquivo, diretorio, caminhoArq;
-    char ch;
 
-    //podemos deixar essa entrada para o usuário inserir onde ele quer colocar o aqrquibo
-    ofstream fout("dados.txt");
-    for(int i=0; i<TMAX; i++){
-        fout<<i+1<<"\n";
-    }
-    fout.close();
+    cout<<"=-=-=-= CRIAÇÃO DO ARQUIVO =-=-=-=\n"<<endl;
+    criaArquivo(TMAX);
 
-    cout<<"Informe o nome do diretorio: ";
-    getline(cin,diretorio);
-    cout<<"Informe o nome do arquivo: ";
-    getline(cin,nomeArquivo);
-    caminhoArq = diretorio + "\" + nomeArquivo;
-    cout<<caminhoArq<<endl;
-    fin.open("dados.txt");  //depois inserir o caminho do arquivo aqui
-    if(!fin)
-        cout << "\nNao posso abrir arquivo copia.xxx\n";
-    else
-    {  //teste para leitura
-         cout << "\nArquivo aberto com sucesso\n";
-        while(fin.get(ch))
-            cout << ch;
-        fin.close();
-    }
+
+    do{
+       cout<<"=-=-=-=-=-=-=-= MANIPULAÇÃO DOS DADOS =-=-=-=-=-=-=-="<<endl;
+       do{
+            cout<<"1.Iniciar Simulação\n2.Sair do programa"<<endl;
+            cin>>opcao;
+       }while(opcao>2 || opcao<1);
+       system("cls");
+
+       switch(opcao){
+       case 1:
+           do{
+                cout<<"Informe a quantidade de dados para a simulação (1 - 10.000): ";
+                cin>>qtdeDados;
+           }while(qtdeDados>10.000 || qtdeDados<1);
+           int dados[qtdeDados];   //aqui declaramos o vetor que irá armazenar as informações
+           do{
+                cout<<"Informe a organizacao incial dos dados: "<<endl;
+                cout<<"1.Crescente\n2.Decrescente\n3.Aleatoria\nOpcao: ";
+                cin>>subopcao;
+           }while(subopcao>3 || subopcao<1);
+            //EM DESENVOLVIMENTO
+           break;
+       }
+
+
+    }while(continuar);
+
     return 0;
 }
