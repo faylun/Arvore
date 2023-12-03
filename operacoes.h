@@ -38,4 +38,13 @@ void leituraArquivo(int qtdeDados){
     }
 }
 
+float valorRelativo(float valorAtual, float valorMaximo){
+    return (valorAtual/valorMaximo) * 100;
+}
+
+void exibeVetor(int vet[], int tamanho){
+    for (int i = 0; i < tamanho; i++)
+        cout << "[" << vet[i] << "]";
+    cout << "\n";
+}
 #endif // OPERACOES_H_INCLUDED

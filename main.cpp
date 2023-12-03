@@ -1,18 +1,25 @@
 #include <iostream>
 #include <fstream>
+#include <time.h>
 #include "operacoes.h"
+#include "shellsort.h"
+#include "QuickSort.h"
+#include "InsertionSort.h"
 #define TMAX 10000
 
 using namespace std;
 
 int main()
 {
+    srand(time(NULL));
     bool continuar = true;
     int opcao, subopcao,qtdeDados, numComp, numMov; //ordenação decrescente de dados
 
-    cout<<"=-=-=-= CRIAÇÃO DO ARQUIVO =-=-=-=\n"<<endl;
-    criaArquivo(TMAX);
 
+    /*cout<<"=-=-=-= CRIAÇÃO DO ARQUIVO =-=-=-=\n"<<endl;
+    criaArquivo(TMAX);*/
+
+    int vet3[20];
 
     do{
        cout<<"=-=-=-=-=-=-=-= MANIPULAÇÃO DOS DADOS =-=-=-=-=-=-=-="<<endl;
@@ -37,7 +44,6 @@ int main()
             //EM DESENVOLVIMENTO
            break;
        }
-
 
     }while(continuar);
 
