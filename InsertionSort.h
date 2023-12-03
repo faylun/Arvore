@@ -19,9 +19,4 @@ void insertionSort(int vet[], int n, int &comp, int &mov){
     }
 }
 
-void exibirInsertionSort(int vet[], int n){
-    for (int  i = 0; i < n; i++)
-        cout << "[" << vet[i] << "]";
-    cout << "\n";
-}
 #endif // INSERTIONSORT_H_INCLUDED

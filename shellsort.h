@@ -1,13 +1,6 @@
 #ifndef SHELLSORT_H_INCLUDED
 #define SHELLSORT_H_INCLUDED
 
-
-/*OBJETIVO: comparar e trocar elementos que estão distantes
-uns dos outros em vez de apenas elementos adjacentes
-envolve dividir a lista em subgrupos menores
-e aplicar o Insertion Sort em cada subgrupo.*/
-
-
 using namespace std;
 
 void shellSort(int vet[], int tamanho, int &c, int &m)
@@ -27,13 +20,6 @@ void shellSort(int vet[], int tamanho, int &c, int &m)
             c++;
         }
     }
-}
-
-void exibeShellSort(int vet[], int n)
-{
-    for (int i = 0; i < n; i++)
-        cout << "[" << vet[i] << "]";
-    cout << "\n";
 }
 
 #endif // SHELLSORT_H_INCLUDED

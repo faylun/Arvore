@@ -1,5 +1,5 @@
 # depslib dependency file v1.0
-1701564964 source:c:\users\gabri\onedrive\documentos\ciência da computação\3 periodo 2023.2\estrutura de dados\metodosordenação_m3\arvore\main.cpp
+1701572542 source:c:\users\gabri\onedrive\documentos\ciência da computação\3 periodo 2023.2\estrutura de dados\metodosordenação_m3\arvore\main.cpp
 	<iostream>
 	<fstream>
 	<time.h>
@@ -8,11 +8,11 @@
 	"QuickSort.h"
 	"InsertionSort.h"
 
-1701562286 c:\users\gabri\onedrive\documentos\ciência da computação\3 periodo 2023.2\estrutura de dados\metodosordenação_m3\arvore\operacoes.h
+1701572855 c:\users\gabri\onedrive\documentos\ciência da computação\3 periodo 2023.2\estrutura de dados\metodosordenação_m3\arvore\operacoes.h
 
 1701560303 c:\users\gabri\onedrive\documentos\ciência da computação\3 periodo 2023.2\estrutura de dados\metodosordenação_m3\arvore\shellsort.h
 
 1701562705 c:\users\gabri\onedrive\documentos\ciência da computação\3 periodo 2023.2\estrutura de dados\metodosordenação_m3\arvore\insertionsort.h
 
-1701564993 c:\users\gabri\onedrive\documentos\ciência da computação\3 periodo 2023.2\estrutura de dados\metodosordenação_m3\arvore\quicksort.h
+1701565293 c:\users\gabri\onedrive\documentos\ciência da computação\3 periodo 2023.2\estrutura de dados\metodosordenação_m3\arvore\quicksort.h
 

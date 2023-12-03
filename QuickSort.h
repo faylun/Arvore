@@ -29,7 +29,7 @@ int particiona(int vet[], int esq, int dir, int &mov, int &comp) {
 }
 
 void quickSort(int vet[], int esq, int dir, int &comp, int &mov) {
-    dir = dir - 1;
+    dir--;
     if (esq < dir) {
         int pi = particiona(vet, esq, dir, mov, comp);
         quickSort(vet, esq, pi - 1, comp, mov);
@@ -37,10 +37,5 @@ void quickSort(int vet[], int esq, int dir, int &comp, int &mov) {
     }
 }
 
-void exibeQuickSort(int vet[], int n){
-    for (int i = 0; i < n; i++)
-        cout << "[" << vet[i] << "]";
-    cout << "\n";
-}
 
 #endif // QUICKSORT_H_INCLUDED
