@@ -19,17 +19,16 @@ int particiona(int vet[], int esq, int dir, int &mov, int &comp) {
         comp++;
         if (vet[j] > pivo) {  // Modificação aqui para ordenação decrescente
             i++;
-             troca(&vet[i], &vet[j]);
+            swap(vet[i], vet[j]);
             mov++;
         }
     }
-    troca(&vet[i + 1], &vet[dir]);
+    swap(vet[i + 1], vet[dir]);
     mov++;
     return (i + 1);
 }
 
 void quickSort(int vet[], int esq, int dir, int &comp, int &mov) {
-    dir--;
     if (esq < dir) {
         int pi = particiona(vet, esq, dir, mov, comp);
         quickSort(vet, esq, pi - 1, comp, mov);

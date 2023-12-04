@@ -3,21 +3,22 @@
 
 using namespace std;
 
-void shellSort(int vet[], int tamanho, int &c, int &m)
-{
+void shellSort(int vet[], int tamanho, int &c, int &m){
     for (int gap = tamanho / 2; gap > 0; gap /= 2)
     {
         for (int i = gap; i < tamanho; i ++)
         {
             int temp = vet[i];
             int j;
-            for (j = i; j >= gap && vet[j - gap] < temp; j -= gap)
+            c++;
+            for ( j = i; j >= gap && vet[j - gap] < temp; j -= gap)
             {
                 vet[j] = vet[j - gap];
                 c++;
+                m++;
             }
             vet[j] = temp;
-            c++;
+            m++;
         }
     }
 }
