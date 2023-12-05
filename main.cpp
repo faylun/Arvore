@@ -45,9 +45,16 @@ int main()
 
             int dadosOriginais[qtdeDados];
             cout<<"\n-~-~-~-~-~-~-~- LEITURA DOS DADOS  -~--~-~-~-~-~-~-"<<endl;
-            leituraArquivo(dadosOriginais,qtdeDados);
+            try
+            {
+                leituraArquivo(dadosOriginais,qtdeDados);
+            }
+            catch (const char* msg)
+            {
+                cerr<<msg<<endl;
+            }
             cout<<"\n-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-"<<endl;
-
+            system("cls");
             do
             {
                 cout<<"\nInforme a organizacao incial dos dados: "<<endl;
@@ -58,9 +65,8 @@ int main()
             organizaOrdemInicial(dadosOriginais, ordem, qtdeDados);
             resetaVetor(dadosOriginais,aux,qtdeDados);
             system("pause");
-            system("cls");
 
-            cout<<"\n-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~--~-~-~-~-~-~-~-~- "<<endl;
+            cout<<"\n-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~--~-~-~-~-~-~-~-~- \n"<<endl;
             cout<<"Organizacao Inicial dos dados: "<<endl;
             exibeVetor(dadosOriginais,qtdeDados);
 
@@ -71,38 +77,40 @@ int main()
             shellSort(aux,qtdeDados,c,m);
             int cShell = c;
             int mShell = m;
-            cout<<"\n\n * SHELLSORT   \nC: "<<cShell<<" | M: "<<mShell<<endl; //teste
-            exibeVetor(aux,qtdeDados); //teste
+            cout<<"\n\n * SHELLSORT "<<endl;
+            exibeVetor(aux,qtdeDados);
 
             resetaVetor(dadosOriginais, aux, qtdeDados);
             resetaContadores(c,m);
             insertionSort(aux,qtdeDados,c,m);
             int cInsert = c;
             int mInsert = m;
-            cout<<"\n\n * INSERTSORT   \nC: "<<cInsert<<" | M: "<<mInsert<<endl; //teste
-
-            exibeVetor(aux,qtdeDados);//teste
+            cout<<"\n\n * INSERTSORT "<<endl;
+            exibeVetor(aux,qtdeDados);
 
             resetaVetor(dadosOriginais, aux, qtdeDados);
             resetaContadores(c,m);
             quickSort(aux,0,qtdeDados-1,c,m);
             int cQuick = c;
             int mQuick = m;
-            cout<<"\n\n * QUICKSORT   \nC: "<<cQuick<<" | M: "<<mQuick<<endl;//teste
-            exibeVetor(aux,qtdeDados);//teste
+            cout<<"\n\n * QUICKSORT  "<<endl;
+            exibeVetor(aux,qtdeDados);
 
-            /*
-                exemplo de analise de comparacao sla
-                compMax = encontrarMaior(cShell, cInsert, cQuick);
-                movMax = encontraMaior(mShell, mInsert, mQuick);
+            compMax = encontrarMaior(cShell, cInsert, cQuick);
+            movMax = encontrarMaior(mShell, mInsert, mQuick);
 
-                compHeap = valorRelativo(compHeap, compMax);
-                compMerge = valorRelativo(compMerge, compMax);
-                break;
-            }*/
-            gravaNoRelatorio( qtdeDados, cShell, mShell, "SHELL SORT", ordem);
-            gravaNoRelatorio( qtdeDados, cInsert, mInsert, "INSERTION SORT",ordem);
-            gravaNoRelatorio( qtdeDados, cQuick, mQuick, "QUICK SORT",ordem);
+            float compQuickRev= valorRelativo(cQuick, compMax);
+            float movQuickRev = valorRelativo(mQuick, movMax);
+            float compInsRev = valorRelativo (cInsert, compMax);
+            float movInsRev = valorRelativo(mInsert, movMax);
+            float compShellRev = valorRelativo(cShell, compMax);
+            float movShellRev = valorRelativo(mShell, movMax);
+
+            gravaNoRelatorio( qtdeDados, cShell, mShell, compShellRev, movShellRev, "SHELL SORT", ordem);
+            gravaNoRelatorio( qtdeDados, cInsert, mInsert,compInsRev, movInsRev, "INSERTION SORT",ordem);
+            gravaNoRelatorio( qtdeDados, cQuick, mQuick,compQuickRev, movQuickRev, "QUICK SORT",ordem);
+
+            cout<<"\nAnalise de comparacoes gravada no arquivo 'relatorio.txt' com sucesso!"<<endl;
             break;
         }
         case 2:

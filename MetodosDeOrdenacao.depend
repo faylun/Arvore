@@ -17,3 +17,22 @@
 
 1701637516 c:\users\gabri\onedrive\documentos\ciência da computação\3 periodo 2023.2\estrutura de dados\metodosordenação_m3\arvore\quicksort.h
 
+1701781352 source:c:\users\gabri\onedrive\documentos\ciência da computação\3 periodo 2023.2\arvore\main.cpp
+	<iostream>
+	<fstream>
+	<time.h>
+	"operacoes.h"
+	"shellsort.h"
+	"QuickSort.h"
+	"InsertionSort.h"
+
+1701781312 c:\users\gabri\onedrive\documentos\ciência da computação\3 periodo 2023.2\arvore\operacoes.h
+	"shellsort.h"
+	<iomanip>
+
+1701781176 c:\users\gabri\onedrive\documentos\ciência da computação\3 periodo 2023.2\arvore\shellsort.h
+
+1701781176 c:\users\gabri\onedrive\documentos\ciência da computação\3 periodo 2023.2\arvore\quicksort.h
+
+1701781176 c:\users\gabri\onedrive\documentos\ciência da computação\3 periodo 2023.2\arvore\insertionsort.h
+

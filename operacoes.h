@@ -1,6 +1,7 @@
 #ifndef OPERACOES_H_INCLUDED
 #define OPERACOES_H_INCLUDED
 #include "shellsort.h"
+#include <iomanip>
 
 using namespace std;
 
@@ -21,7 +22,7 @@ void criaArquivo(int qtdeDados)
         nomeArquivo = "dados.txt";
     else if(opcao == 2)
     {
-        cout<<"Informe o diretorio do arquivo: ";
+        cout<<"\nInforme o diretorio do arquivo: ";
         getline(cin, diretorio);
         nomeArquivo = diretorio +  '\\' + "dados.txt";
     }else{
@@ -74,16 +75,13 @@ string leituraArquivo(int vet[], int qtdeDados)
     return caminho;
 }
 
-void gravaNoRelatorio(int n, int comp, int mov, string ordenacao, int ordem) {
+void gravaNoRelatorio(int n, int comp, int mov, float compRelativa, float movRelativa, string ordenacao, int ordem) {
     ofstream relatorio("relatorio.txt", ios_base::app);
 
     if (!relatorio.is_open()) {
         cerr << "Erro ao abrir o arquivo de relatório." << endl;
         return;
     }
-
-    float compRelativa = static_cast<float>(comp) / n;
-    float movRelativa = static_cast<float>(mov) / n;
     // Adicione informações ao relatório conforme necessário
     relatorio << "\n\n-=-=-=-=--=-=-=-=--=-=-=-=-=--=-=-=-=--=-=-=-=--=-=-=-=-=-=-=-=-= " << ordenacao << " -=-=-=-=--=-=-=-=--=-=-=-=-=--=-=-=-=--=-=-=-=--=-=-=-=-=-=-=-=-=\n";
     if(ordenacao == "SHELL SORT"){
@@ -96,24 +94,28 @@ void gravaNoRelatorio(int n, int comp, int mov, string ordenacao, int ordem) {
             modelo = "ALEATORIO";
         relatorio << "\n|\tOrdem Original dos dados: "<< modelo<<"\n";
     }
-    /*for (int i = 0; i < n; i++){
-        relatorio << "[" << vetCopia[i] << "]" << " ";
-    }
-
-    relatorio << "\n\n";
-    relatorio << "|\tOrdem Após a ordenacao dos dados: ";
-    for (int i = 0; i < n; i++){
-        relatorio << "[" << vetOriginal[i] << "]" << " ";
-    }*/
 
     relatorio << "\n" << "+---------------------------------+-----------------------+------------------------+----------------------------+-------------------------------+";
     relatorio << "\n|\tQuantidade de dados\t  |\t  Comparação\t  |\t  Movimentação\t   |\t  Comparação Relat. \t|\t  Movimentação Relat.\t|\n\n";
-    relatorio << "|        \t" << n << "\t\t  |\t    " << comp << "\t\t  |\t    " << mov << "\t\t   |\t\t " << compRelativa << "\t\t|\t\t" << movRelativa << "\t\t|\n\n";
+    relatorio << "|        \t" << n << "\t\t  |\t    " << comp << "\t\t  |\t    " << mov << "\t\t   |\t\t " << fixed << setprecision(2) << compRelativa << "\t\t|\t\t"  << fixed << setprecision(2) << movRelativa << "\t\t|\n\n";
     relatorio << "+---------------------------------+-----------------------+------------------------+----------------------------+-------------------------------+" << "\n";
     relatorio.close();
     mov = 0;
     comp = 0;
 }
+
+float encontrarMaior(float a,float  b, float  c){
+    float maior = a;
+
+    if(b > maior)
+        maior = b;
+
+    if(c > maior)
+        maior = c;
+
+    return maior;
+}
+
 float valorRelativo(float valorAtual, float valorMaximo)
 {
     return (valorAtual/valorMaximo) * 100;
